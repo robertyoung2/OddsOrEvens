@@ -16,10 +16,13 @@ public class OddsOrEvens {
 
         if (choice.equals("O") || choice.equals("o")) {
             System.out.println(name + " has picked odds! The computer will be evens.");
+            choice = "odds";
         }
         else {
             System.out.println(name + " has picked evens! The computer will be odds.");
+            choice = "evens";
         }
+
         System.out.println("------------------------------");
         System.out.println();
 
@@ -33,22 +36,38 @@ public class OddsOrEvens {
         Random random = new Random();
         int computer = random.nextInt(6);
         System.out.println("The computer plays " + computer + " \"fingers\".");
+
         System.out.println("------------------------------");
         System.out.println();
 
+
         //SUM
         //adds the two integers together and produces the sum
+        int total_fingers = computer + fingers;
+        System.out.println(fingers + " + " + computer + " = " + (total_fingers));
 
 
         //WHO WINS
         //decides if final answers is odd or even, and declares the winner
 
-//        if (user is odd and sum is odd) {
-//            user wins
-//        }
-//        else if(user is odd and sum is even){
-//            user loses
-//        }
-    }
+        if (total_fingers % 2 == 0) {
+            System.out.println(total_fingers + " is ...even!");
+            if (choice.equals("evens")) {
+                System.out.println("That means " + name + " wins!");
+            }
+            else {
+                System.out.println("That means the computer wins!");
+            }
+        }
 
+        else {
+            System.out.println(total_fingers + " is ...odd!");
+            if (choice.equals("odds")) {
+                System.out.println("That means " + name + " wins!");
+            }
+            else {
+                System.out.println("That means the computer wins!");
+            }
+        }
+    }
 }
