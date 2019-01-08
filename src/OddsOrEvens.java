@@ -69,5 +69,8 @@ public class OddsOrEvens {
                 System.out.println("That means the computer wins!");
             }
         }
+
+        System.out.println("------------------------------");
+        System.out.println();
     }
 }
